@@ -54,7 +54,7 @@ def rag_query(query: str, top_k=4, model="llama3.2:latest",user_id: int = None) 
             "prompt": prompt,
             "stream": False,
         },
-        timeout=60  # can be slow on first run
+        timeout=90  # can be slow on first run
     )
     response.raise_for_status()
     answer = response.json()["response"].strip()
